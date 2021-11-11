@@ -1,0 +1,138 @@
+html,
+body {
+    height: 100%;
+}
+
+/*
+body {
+    padding: 1.5% 4%;
+    padding-left: 5%;
+    height: 100%;
+    background: url(Image/bgd.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Quicksand', sans-serif;
+}
+*/
+
+/* NAVBAR CSS BEGINS */
+
+.navbar-brand {
+    font-weight: bolder;
+}
+.contact:hover{
+    outline: none;
+    box-shadow: inset 0 -2px 0 0 #28a745;
+}
+
+@media only screen and (min-width: 992px) {
+    .form-control {
+        display: inline-block;
+        width: 78%;
+    }
+
+    .dropDownCentre {
+        text-align: center;
+    }
+}
+@media only screen and (max-width: 390px) {
+    .navbar-toggler{
+        margin-left: 39%;
+    }
+}
+    
+@media only screen and (max-width: 991px) {
+    .form-control {
+        display: inline-block;
+        width: 79%;
+    }
+
+    .dropDownCentre {
+        text-align: center;
+    }
+}
+
+/* NAVBAR CSS ENDS */
+
+
+.col1,
+.col2 {
+    color: white;
+    text-align: center;
+}
+
+.city {
+    padding-top: 5%;
+}
+
+.f-row-f-col {
+    padding-top: 18%;
+    padding-bottom: 15%;
+}
+.f-row-s-col{
+    padding-bottom: 10%;
+}
+
+
+
+.temp {  /* hr below temperature */
+    overflow: visible;
+    height: 30 px;
+    border-style: solid;
+    border-color: #a3b4d6;
+    border-width: 1 px 0 0 0;
+    border-radius: 20 px;
+    width: 30%;
+}
+
+.features-item{   /* each col of carousel */
+    text-align: center;
+    color: white;
+    line-height: 4px;
+}
+.anime{  /* weather icon animation */
+    animation: iconAnime 1.5s linear infinite alternate;
+}
+@keyframes iconAnime {
+    from{
+        transform: scale(0.9);
+    }
+    to{
+        transform: scale(1.2);
+    }
+}
+
+.roundBox{ /* for search button */
+    border-radius: 25%;
+}
+
+.carousel-indicators{
+    visibility: hidden;
+}
+
+.footer{
+    padding-top: 3%;
+    text-align: center;
+    color: white;
+}
+.fb{
+    padding-right: 2%;
+    opacity: 0.8;
+}
+.insta{
+    padding-right: 2%;
+    opacity: 0.8;
+}
+.git{
+    padding-right: 2%;
+    opacity: 0.8;
+}
+.copy{
+    padding-top: 1.5%;
+}
+.love{
+    padding-bottom: 1%;
+}
+
