@@ -53,6 +53,9 @@ body {
         text-align: center;
     }
 }
+.navbar-dark .navbar-toggler{
+    border: 2px solid #28a7a1;
+}
 
 /* NAVBAR CSS ENDS */
 
