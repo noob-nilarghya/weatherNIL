@@ -106,7 +106,7 @@ app.get("/", function (req, res) { // when user visit our server
     }).then(Data => { // when getWeather fetch & convert data in JSON format
         console.log("final data recieved");
     }).catch(err => {
-        console.log(err);
+        res.redirect("/errorPage");
     });
 
     const updateCity = async (city) => { // This will give both the api call data
@@ -185,6 +185,15 @@ app.post("/", function (req, res) { // when user make a post request
     // input text name is newCity
     console.log(city);
     res.redirect("/"); // & redirect to root where all the processing occurs for that city & finall be rendered
+});
+
+app.get("/errorPage", function(req, res){
+    res.render("errorPage");
+});
+
+app.post("/errorPage", function(req, res){
+    city="Kolkata";
+    res.redirect("/")
 });
 
 
