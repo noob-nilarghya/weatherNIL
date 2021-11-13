@@ -127,6 +127,7 @@ app.get("/", function (req, res) { // when user visit our server
         //console.log(finalData);
         //Current
 
+        city= tempData.name
         desh = tempData.sys.country;
         weatherIcon = finalData.current.weather[0].icon;
         dn = weatherIcon.charAt(2);
