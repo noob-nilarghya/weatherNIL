@@ -134,7 +134,7 @@ app.get("/", function (req, res) { // when user visit our server
         iconURL = "http://openweathermap.org/img/wn/" + weatherIcon + "@2x.png";
         temperature = Math.round(finalData.current.temp) + 1;
         minTemp = Math.floor(tempData.main.temp_min);
-        maxTemp = Math.floor(tempData.main.temp_max) + 1;
+        maxTemp = Math.floor(tempData.main.temp_max) + 2;
         windSpeed = finalData.current.wind_speed;
         weatherDescription = finalData.current.weather[0].description;
         humidity = finalData.current.humidity;
@@ -147,9 +147,9 @@ app.get("/", function (req, res) { // when user visit our server
         iconCode12 = [];
 
         for (let i = 0; i < 12; i++) {
-            temp12.push(Math.floor(finalData.hourly[i].temp));
-            weatherDescr12.push(finalData.hourly[0].weather[0].description);
-            iconLink = " http://openweathermap.org/img/wn/" + finalData.hourly[0].weather[0].icon + "@2x.png"
+            temp12.push(Math.floor(finalData.hourly[(2*i)+1].temp));
+            weatherDescr12.push(finalData.hourly[(2*i)+1].weather[0].description);
+            iconLink = " http://openweathermap.org/img/wn/" + finalData.hourly[(2*i)+1].weather[0].icon + "@2x.png"
             iconCode12.push(iconLink);
         }
 

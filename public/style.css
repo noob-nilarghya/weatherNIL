@@ -125,16 +125,28 @@ body {
     color: white;
 }
 .fb{
-    padding-right: 2%;
+    border-radius: 50%;
+    margin-right: 2%;
     opacity: 0.8;
 }
-.insta{
-    padding-right: 2%;
+.fb:hover{
+    box-shadow: 10px 0px 40px 20px white;
+}
+.in{
+    border-radius: 50%;
+    margin-right: 2%;
     opacity: 0.8;
+}
+.in:hover{
+    box-shadow: 10px 0px 40px 20px white;
 }
 .git{
-    padding-right: 2%;
+    border-radius: 50%;
+    margin-right: 2%;
     opacity: 0.8;
+}
+.git:hover{
+    box-shadow: 10px 0px 40px 20px white;
 }
 .copy{
     padding-top: 1.5%;
