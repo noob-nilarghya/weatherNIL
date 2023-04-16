@@ -1,21 +1,15 @@
-html,
-body {
-    height: 100%;
-}
 
-/*
 body {
     padding: 1.5% 4%;
-    padding-left: 5%;
     height: 100%;
-    background: url(Image/bgd.jpg);
+    background: url(Image/bg<%=dn%>.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
     font-family: 'Quicksand', sans-serif;
 }
-*/
+
 
 /* NAVBAR CSS BEGINS */
 
@@ -39,7 +33,13 @@ body {
 }
 @media only screen and (max-width: 390px) {
     .navbar-toggler{
-        margin-left: 39%;
+        margin-left: 10%;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .navbar-toggler{
+        margin-left: 40%;
     }
 }
     
@@ -63,8 +63,7 @@ body {
 /* NAVBAR CSS ENDS */
 
 
-.col1,
-.col2 {
+.col1, .col2 {
     color: white;
     text-align: center;
 }
@@ -119,8 +118,49 @@ body {
     visibility: hidden;
 }
 
+
+.section-map {
+    margin: 5rem 10rem 4rem 10rem;
+    position: relative;
+    height: 35rem;
+}
+
+#map {
+    border-radius: 15px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.marker {
+    background-image: url('/image/marker.png');
+    background-size: cover;
+    width: 32px;
+    height: 40px;
+    cursor: pointer;
+}
+.hidden{
+    display: none;
+}
+
+.mapboxgl-popup {
+    max-width: 25rem;
+}
+
+.mapboxgl-popup-content {
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    padding: 1rem !important;
+    font-size: 1rem;
+    -webkit-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15) !important;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15) !important;
+}
+
+
+
 .footer{
-    padding-top: 3%;
+    margin-top: 3%;
     text-align: center;
     color: white;
 }
@@ -155,3 +195,45 @@ body {
     padding-bottom: 1%;
 }
 
+@media (max-width: 75em) {
+    html {
+        font-size: 80.25%;
+    }
+}
+@media (max-width: 59em) {
+    html {
+        font-size: 71.5%;
+    }
+}
+@media (max-width: 44em) {
+    .section-map{
+        margin: 1rem 5rem 4rem 5rem;
+    }
+    footer{
+        padding: 5rem 5rem 3rem 5rem;
+    }
+}
+@media (max-width: 37.5em) {
+    .section-map{
+        margin: 1rem 1rem 4rem 1rem;
+    }
+}
+@media (max-width: 31.25em) {
+    footer{
+        padding: 5rem 1rem 3rem 1rem;
+        justify-items: end;
+    }
+    .section-map{
+        margin: 1rem 0rem 4rem 0rem;
+    }
+}
+@media (max-width: 23.75em) {
+    .section-hero{
+        padding: 1rem 2rem 7rem 2rem;
+    }
+}
+@media (max-width: 21.875em) {
+    footer{
+        padding: 5rem 0rem 3rem 1rem;
+    }
+}
