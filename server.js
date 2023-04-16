@@ -162,7 +162,7 @@ app.get("/", function (req, res) { // when user visit our server
 
     getData(city) // calling updateCity promise
         .then(data => updateUI(data)) // if data found, call updateUIwith that data
-        .catch(err =>  res.status(404).render('error'));
+        .catch(err =>  res.status(404).render('errorPage'));
 
 });
 
