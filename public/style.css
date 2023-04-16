@@ -132,7 +132,7 @@ body {
 }
 
 .marker {
-    background-image: url('/image/marker.png');
+    background-image: url('/Image/marker.png');
     background-size: cover;
     width: 32px;
     height: 40px;
