@@ -9,6 +9,7 @@ const bodyParser = require("body-parser");
 const fetch = require('node-fetch');  // to fetch data from external API asynchronously
 
 const dotenv= require('dotenv');
+const { monitorEventLoopDelay } = require("perf_hooks");
 dotenv.config({ path: './config.env'});
 
 const PORT = process.env.PORT || 4000;
@@ -38,35 +39,14 @@ let unit = "metric";
 let temp12 = [];
 let weatherDescr12 = [];
 let iconCode12 = [];
+let timezone;
 
 
 
-function calcDateTime(){
-    const nowDate= new Date();
-    const option1 ={
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric',
-        weekday: 'long'
-    };
-    const finalDate= new Intl.DateTimeFormat('en-US', option1).format(nowDate);
 
-    const nowTime= new Date();
-    const option2 ={
-        hour: 'numeric',
-        minute: '2-digit', // types of value that we can assign to each key
-    };
-    const finalTime= new Intl.DateTimeFormat('en-US', option2).format(nowTime);
-
-    return { date: finalDate, time: finalTime };
-}
 
 
 app.get("/", function (req, res) { // when user visit our server
-
-    const localTime= calcDateTime().time;
-    const localDayDescription= calcDateTime().date;
-    
 
     // we first call our basic api with city name to get its lat, lon. Then we call the hourly api with that lat & lon
     const getData = async (city) => { // getting latitude, longitude using API CALL 1 ----> retieve hourly forecast data using API CALL 2
@@ -78,6 +58,8 @@ app.get("/", function (req, res) { // when user visit our server
                 throw new Error('Problem getting first API call');
             }
             const Data = await Resp.json();
+
+            timezone= Data.timezone
 
             const Lat= Data.coord.lat;   const Lon= Data.coord.lon;
             let oneCallApiLink = "https://api.openweathermap.org/data/2.5/onecall?lat=" + Lat + "&lon=" + Lon + "&exclude=minutely,daily,alerts&units=" + unit + "&appid=" + apiKey;
@@ -137,8 +119,6 @@ app.get("/", function (req, res) { // when user visit our server
 
         // rendering with ejs module
         res.status(200).render("weather", {
-            localTime: localTime,
-            localDayDescription: localDayDescription,
             city: city,
             desh: desh,
             iconURL: iconURL,
@@ -152,6 +132,7 @@ app.get("/", function (req, res) { // when user visit our server
             iconCode12: iconCode12,
             temp12: temp12,
             weatherDescr12: weatherDescr12,
+            timezone: timezone,
             coords: {
                 lat: lat,
                 lon: lon,

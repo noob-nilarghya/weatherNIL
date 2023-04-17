@@ -1,4 +1,30 @@
-console.log("Here");
+
+if(document.querySelector('.middle')){
+
+    const localTime= document.querySelector('.time');
+    const localDayDescription= document.querySelector('.date');
+
+    const timezone= localTime.dataset.timezone;
+
+    function calcDateTime(offsetVal){
+        var min= offsetVal/60;
+        var hour= Math.floor(min/60);
+        min-=(hour*60);
+
+        setInterval(function(){
+            const nowDate= new Date();
+
+            const dateTimeStr= moment(nowDate).add(hour, 'h').add(min, 'm').format('MMMM Do YYYY, h:mm:ss a');
+            const date= dateTimeStr.split(',')[0].trim();
+            const time= dateTimeStr.split(',')[1].trim();
+
+            localTime.textContent= time;
+            localDayDescription.textContent= date;
+        }, 1000);
+    }
+
+    calcDateTime(timezone);
+}
 
 const secMap= document.querySelector('.section-map');
 
