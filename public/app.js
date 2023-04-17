@@ -14,7 +14,8 @@ if(document.querySelector('.middle')){
         setInterval(function(){
             const nowDate= new Date();
 
-            const dateTimeStr= moment(nowDate).add(hour, 'h').add(min, 'm').format('MMMM Do YYYY, h:mm:ss a');
+            const dateTimeStr= moment(nowDate).add(hour, 'h').add(min, 'm').subtract(5, 'h').subtract(30, 'm').format('MMMM Do YYYY, h:mm:ss a');
+
             const date= dateTimeStr.split(',')[0].trim();
             const time= dateTimeStr.split(',')[1].trim();
 
