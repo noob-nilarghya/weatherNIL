@@ -35,7 +35,7 @@ body {
     }
 }
 
-@media only screen and (max-width: 300px) {
+@media only screen and (max-width: 340px) {
     .navbar-toggler{
         margin-left: 40%;
     }
@@ -64,19 +64,19 @@ body {
 .col1, .col2 {
     color: white;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+.col1{
+    padding-top: 8vh;
 }
 
 .city {
     padding-top: 5%;
 }
 
-.f-row-f-col {
-    padding-top: 18%;
-    padding-bottom: 15%;
-}
-.f-row-s-col{
-    padding-bottom: 10%;
-}
 
 
 
