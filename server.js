@@ -177,8 +177,8 @@ app.listen(PORT, function () {
 });
 
 
-//"https://api.openweathermap.org/data/2.5/onecall?lat=22.5697&lon=88.3697&exclude=minutely,daily,alerts&units=metric&appid=9efe2365e0c13efa259f9eb69ae1aef7"
 //"https://api.openweathermap.org/data/2.5/weather?q=kolkata&appid=9efe2365e0c13efa259f9eb69ae1aef7&units=metric"
+//"https://api.openweathermap.org/data/2.5/onecall?lat=22.5697&lon=88.3697&exclude=minutely,daily,alerts&units=metric&appid=9efe2365e0c13efa259f9eb69ae1aef7"
 
 //let apiLink = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey + "&units=" + unit;
 //let oneCallApiLink = "https://api.openweathermap.org/data/2.5/onecall?lat=" + Lat + "&lon=" + Lon + "&exclude=minutely,daily,alerts&units=" + unit + "&appid=" + apiKey;
