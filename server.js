@@ -17,6 +17,7 @@ const PORT = process.env.PORT || 4000;
 app.set("view engine", "ejs");
 app.set('views', path.join(__dirname,'/views')); // views ke andaar ka maal template engine ko dikhega
 app.use(express.static(path.join(__dirname, 'public'))); 
+app.use(express.static(process.cwd())); 
 app.use(express.urlencoded( { extended: true, limit: '10kb'} ));
 
 
@@ -164,6 +165,10 @@ app.post("/errorPage", function(req, res){
     lat= 22.5697;
     lon= 88.3697;
     res.redirect("/")
+});
+
+app.get('/sitemap.xml', (req, res) => {
+    res.sendFile(path.join(__dirname, 'sitemap.xml'));
 });
 
 
